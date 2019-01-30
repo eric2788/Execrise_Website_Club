@@ -9,8 +9,9 @@ import axios from "axios";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-  baseURL: "https://api.hypernite.com/resources/club.php", //where to get the json code with
+    baseURL: "//localhost:9090/club", //where to get the json code with
   timeout: 10 * 1000, // Timeout
+    responseType: 'json',
   // withCredentials: true, // Check cross-site Access-Control
 };
 
