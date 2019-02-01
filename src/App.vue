@@ -233,7 +233,7 @@ export default {
       this.loading = true;
       this.$axios({
         method: 'delete',
-        url: 'delete/' + id
+        url: id
       }).then(res=>{
         if (res.data.success){
           this.operation.success = true;
@@ -255,7 +255,6 @@ export default {
       delete this.input.id;
       this.$axios({
         method: 'post',
-        url: 'create',
         data: this.input,
       }).then(res=>{
         if (res.data.id != null) {
@@ -276,7 +275,7 @@ export default {
       this.loading = true;
       this.$axios({
         method: 'put',
-        url: 'update/' + id,
+        url: id,
         data: this.input,
       }).then(res => {
         if (res.data.id != null) {
