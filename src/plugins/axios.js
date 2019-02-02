@@ -9,7 +9,7 @@ import axios from "axios";
 // axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 let config = {
-  baseURL: "//us.ix.hypernology.com:9090/club", //where to get the json code with
+    baseURL: '//us.ix.hypernology.com:9090/club', //where to get the json code with
   timeout: 10 * 1000, // Timeout
     responseType: 'json',
   // withCredentials: true, // Check cross-site Access-Control

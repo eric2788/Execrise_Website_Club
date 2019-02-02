@@ -55,7 +55,7 @@
                 <td>{{props.item.sport}}</td>
                 <td>{{props.item.level}}</td>
                 <td class="justify-center layout px-0">
-                  <v-btn :disabled="loading" :loading="loading" @click.once="assignItem(props.item.id)" flat icon
+                  <v-btn :disabled="loading" :loading="loading" @click="assignItem(props.item.id)" flat icon
                          slot="activator" small>
                     <v-icon small>edit</v-icon>
                   </v-btn>
@@ -232,8 +232,8 @@ export default {
       if (this.delete_id === -1) return;
       this.loading = true;
       this.$axios({
+        url: id.toString(),
         method: 'delete',
-        url: id
       }).then(res=>{
         if (res.data.success){
           this.operation.success = true;
@@ -275,7 +275,7 @@ export default {
       this.loading = true;
       this.$axios({
         method: 'put',
-        url: id,
+        url: id.toString(),
         data: this.input,
       }).then(res => {
         if (res.data.id != null) {
@@ -293,9 +293,9 @@ export default {
     },
     assignItem(id) {
       this.$refs.createForm.reset();
-      this.dialog_edit = true;
       const result = this.items.find(data => data.id === id);
       Object.assign(this.input, result);
+      this.dialog_edit = true;
     },
     clearItem() {
       this.$refs.editForm.reset();
